@@ -1,0 +1,89 @@
+
+DEC 31 - JAN 06
+NO SLOT FOR		: THURSDAY   31
+NO SLOT FOR		: FRIDAY     01
+NO SLOT FOR		: SATURDAY   02
+NO SLOT FOR		: SUNDAY     03
+NO SLOT FOR		: MONDAY     04
+NO SLOT FOR		: TUESDAY    05
+NO SLOT FOR		: WEDNESDAY  06
+
+JAN 07 - 13
+NO SLOT FOR		: THURSDAY   31
+NO SLOT FOR		: FRIDAY     01
+NO SLOT FOR		: SATURDAY   02
+NO SLOT FOR		: SUNDAY     10
+NO SLOT FOR		: MONDAY     11
+NO SLOT FOR		: TUESDAY    12
+NO SLOT FOR		: WEDNESDAY  13
+
+JAN 14 - 20
+NO SLOT FOR		: THURSDAY   14
+NO SLOT FOR		: FRIDAY     15
+
+AVAILABLE DAY 		: Saturday 16th January
+
+AVAILABLE SLOTS 	: Between 16:00 - 17:00
+			: Between 17:00 - 18:00
+			: Between 18:00 - 19:00
+			: Between 19:00 - 20:00
+			: Between 20:00 - 21:00
+			: Between 21:00 - 22:00
+
+AVAILABLE DAY 		: Sunday 17th January
+
+AVAILABLE SLOTS 	: Between 09:00 - 10:00
+			: Between 10:00 - 11:00
+			: Between 11:00 - 12:00
+			: Between 13:00 - 14:00
+			: Between 14:00 - 15:00
+			: Between 15:00 - 16:00
+			: Between 16:00 - 17:00
+			: Between 17:00 - 18:00
+			: Between 18:00 - 19:00
+			: Between 19:00 - 20:00
+			: Between 20:00 - 21:00
+			: Between 21:00 - 22:00
+
+AVAILABLE DAY 		: Monday 18th January
+
+AVAILABLE SLOTS 	: Between 15:00 - 16:00
+			: Between 16:00 - 17:00
+			: Between 17:00 - 18:00
+			: Between 19:00 - 20:00
+			: Between 20:00 - 21:00
+			: Between 21:00 - 22:00
+			: Between 22:00 - 23:00
+
+AVAILABLE DAY 		: Tuesday 19th January
+
+AVAILABLE SLOTS 	: Between 09:00 - 10:00
+			: Between 10:00 - 11:00
+			: Between 12:00 - 13:00
+			: Between 13:00 - 14:00
+			: Between 14:00 - 15:00
+			: Between 15:00 - 16:00
+			: Between 16:00 - 17:00
+			: Between 17:00 - 18:00
+			: Between 18:00 - 19:00
+			: Between 19:00 - 20:00
+			: Between 20:00 - 21:00
+			: Between 21:00 - 22:00
+			: Between 22:00 - 23:00
+
+AVAILABLE DAY 		: Wednesday 20th January
+
+AVAILABLE SLOTS 	: Between 08:00 - 09:00
+			: Between 09:00 - 10:00
+			: Between 10:00 - 11:00
+			: Between 11:00 - 12:00
+			: Between 13:00 - 14:00
+			: Between 14:00 - 15:00
+			: Between 15:00 - 16:00
+			: Between 16:00 - 17:00
+			: Between 17:00 - 18:00
+			: Between 18:00 - 19:00
+			: Between 19:00 - 20:00
+			: Between 20:00 - 21:00
+			: Between 21:00 - 22:00
+			: Between 22:00 - 23:00
