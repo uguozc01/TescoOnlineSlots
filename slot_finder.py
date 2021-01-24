@@ -82,27 +82,17 @@ def book_slot():
         print(e)
         driver.quit()
 
-def home_delivery():
+def deliver(delivery_type):
     global driver
-    xpath_deliver = '//*[@id="main"]/div[1]/div/div[1]/div[3]/div/div/div[1]/a'
+    xpath_deliver = delivery_type
+    if xpath_deliver == 'home':
+        xpath_deliver = '//*[@id="main"]/div[1]/div/div[1]/div[3]/div/div/div[1]/a'
+    else:
+        xpath_deliver = '//*[@id="main"]/div[1]/div/div[1]/div[3]/div/div/div[2]/a'
     try:
         wait = WebDriverWait(driver,10)
-        HomeDeliveryElement = wait.until(EC.element_to_be_clickable((By.XPATH, xpath_deliver))) 
-        HomeDeliveryElement.click()
-    except WebDriverException as e:
-        print(e)
-    except Exception as e:
-        print(e)
-        driver.quit()
-
-def click_colleck():
-    """Click and Collect if there is no home delivery option presented"""
-    global driver
-    xpath_collect = '//*[@id="main"]/div[1]/div/div[1]/div[3]/div/div/div[2]/a'
-    try:
-        wait = WebDriverWait(driver,10)
-        HomeDeliveryElement = wait.until(EC.element_to_be_clickable((By.XPATH, xpath_collect)))        
-        HomeDeliveryElement.click()
+        DeliveryElement = wait.until(EC.element_to_be_clickable((By.XPATH, xpath_deliver)))        
+        DeliveryElement.click()
     except WebDriverException as e:
         print(e)
     except Exception as e:
@@ -132,20 +122,19 @@ def locators():
 
     def findHours():
         global hour
-        time.sleep(2)
-        hour = wait.until(EC.presence_of_all_elements_located((By.XPATH, HOUR_PATTERN)))
+        hours = wait.until(EC.presence_of_all_elements_located((By.XPATH, HOUR_PATTERN)))
         pattern = re.compile(r'(\w+ \d\d?\w{2} \w+), (\w{7} \d{2}:\d{2} - \d{2}:\d{2})\.')
 
-        for l, hour in enumerate(hour, start=1):
+        for l, hour in enumerate(hours, start=1):
             global pattern_hour, matched_day, matched_hour
             pattern_hour = re.match(pattern, hour.text)
             matched_day = pattern_hour.group(1)
             matched_hour = pattern_hour.group(2)
             if  l == 1:
                 f.write(f'\nAVAILABLE DAY \t\t: {matched_day}\n\nAVAILABLE SLOTS \t: {matched_hour}\n')
-            elif len(hour) > 1 and l == len(hour):
+            elif len(hours) > 1 and l == len(hours):
                 f.write(f'\t\t\t: {matched_hour}\n')
-            elif len(hour) > 1 and l < len(hour):
+            elif len(hours) > 1 and l < len(hours):
                 f.write(f'\t\t\t: {matched_hour}\n')
 
     with open('Available_Slots.txt', 'w') as f:
@@ -186,7 +175,6 @@ def locators():
                     m1 = f'{matched_date1}'.ljust(10)
                     m3 = f'{matched_date3}'
                     f.write(f'NO SLOT FOR\t\t: {m1} {m3}\n')
-                    
             time.sleep(2)
 
 def send_email(email=EMAIL_ADDRESS, passwd=EMAIL_PASSWORD):
@@ -216,8 +204,8 @@ def teardown():
 setup()
 login()
 book_slot()
-home_delivery()
-# click_colleck() # home delivery does not give any slot run this. Make it automatically run
+deliver("home")
+# deliver("collect") # home delivery does not give any slot run this.
 locators()
 send_email()
 teardown()
