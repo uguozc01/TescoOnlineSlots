@@ -41,16 +41,35 @@ def window_size(x,y):
 
 def login():
     global driver
+    
+    wait = WebDriverWait(driver,5)
+    cookieFirst = '//*[@id="sticky-bar-cookie-wrapper"]/span/div/div/div[2]/form/button'
+    cookieSecond = '//*[@id="app"]/div[1]/div[1]/div/div[2]/form/button'
+
     try:
-        wait = WebDriverWait(driver,10)
+        CookieAcceptClose = wait.until(EC.element_to_be_clickable((By.XPATH, cookieFirst)))
+    except Exception as e:
+        print(e)
+    else:
+        CookieAcceptClose.submit()
+
+    try:
         CookieAcceptCloseFirst = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'cookie-policy__button')))
+    except Exception as e:
+        print(e)
+    else:
         CookieAcceptCloseFirst.submit()
 
+    try:
+        CookieAcceptCloseSecond = wait.until(EC.presence_of_element_located((By.XPATH, cookieSecond)))
+    except Exception as e:
+        print(e)
+    else:
+        CookieAcceptCloseSecond.submit()
+
+    try:
         LoginElement = wait.until(EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, 'Sign in')))
         LoginElement.click()
-
-        CookieAcceptCloseSecond = wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="app"]/div[1]/div[1]/div/div[2]/form/button')))
-        CookieAcceptCloseSecond.submit()
 
         UsernameElement = wait.until(EC.presence_of_element_located((By.ID,'username')))
         UsernameElement.clear()
